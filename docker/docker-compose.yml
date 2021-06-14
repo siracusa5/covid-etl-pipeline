@@ -1,0 +1,13 @@
+version: '2'
+services:
+  db:
+    image: mysql
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_DATABASE: covid_db
+    ports:
+      - "3307:3306"
+    volumes:
+      - $HOME/repos/density_code_challenge/docker/sql/main.sql
